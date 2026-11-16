@@ -216,7 +216,7 @@ Strategi prompting saya adalah meminta AI untuk menjelaskan secara rinci tentang
 
 ### Log / bukti penggunaan AI
 
-https://chatgpt.com/share/6afb2ac4-4f9c-83ec-b57e-51b2f798906d?ogimg=plain
+https://chatgpt.com/share/6afb2bb5-c87c-83ec-854f-53c7f4218b61?ogimg=plain
 
 ### Keterbatasan AI dan perbaikan manual
 
