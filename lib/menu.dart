@@ -150,4 +150,3 @@ class ItemCard extends StatelessWidget {
     );
   }
 }
-
