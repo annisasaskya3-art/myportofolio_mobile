@@ -64,31 +64,7 @@ Pastikan Flutter SDK telah terpasang dan perangkat atau emulator telah tersedia.
 
 ## Individual Assignment 7
 
-1. Apa saja widget yang digunakan pada proyek ini dan apa fungsinya?
-
-Beberapa widget yang digunakan dalam aplikasi MyPortfolio Mobile ini adalah:
-
-- MaterialApp: Menjadi konfigurasi utama aplikasi berbasis Material Design.
-- Scaffold: Menyediakan struktur dasar halaman, seperti AppBar dan body.
-- AppBar: Menampilkan judul aplikasi pada bagian atas halaman.
-- SingleChildScrollView: Memungkinkan konten halaman dapat digulir apabila ukurannya melebihi layar.
-- Column: Menyusun widget secara vertikal.
-- Row: Menyusun kartu informasi secara horizontal.
-- Expanded: Memberikan ruang yang tersedia secara proporsional kepada kartu informasi.
-- Card: Menampilkan informasi dalam bentuk kartu.
-- Padding: Memberikan jarak di bagian dalam widget.
-- Text: Menampilkan teks, seperti identitas mahasiswa dan pesan selamat datang.
-- SizedBox: Memberikan jarak antarwidget.
-- GridView.count: Menyusun tombol-tombol dalam bentuk grid.
-- Material: Menyediakan permukaan dengan warna dan bentuk tertentu untuk tombol.
-- InkWell: Memberikan interaksi ketika pengguna menekan tombol.
-- Icon: Menampilkan ikon yang merepresentasikan setiap tombol.
-- SnackBar: Menampilkan pesan singkat setelah tombol ditekan.
-- ScaffoldMessenger: Mengatur dan menampilkan SnackBar pada Scaffold.
-
-Selain widget bawaan Flutter, terdapat tiga class yang dibuat untuk menyusun komponen aplikasi, yaitu "MyHomePage", "InfoCard", "ItemHomepage", dan "ItemCard".
-
-2. Bagaimana struktur widget tree dari aplikasi ini? Jelaskan hubungan parent dan child.
+1. Bagaimana struktur widget tree dari aplikasi ini? Jelaskan hubungan parent dan child.
 
 Widget tree merupakan susunan hierarki widget dalam Flutter yang menunjukkan hubungan antara widget induk (parent) dan widget anak (child).
 
@@ -117,6 +93,30 @@ MyApp
 Hubungan parent dan child menunjukkan bahwa sebuah widget dapat menjadi induk bagi widget lain. Contohnya, "Scaffold" menjadi parent dari "AppBar" dan "SingleChildScrollView". Sementara itu, "Column" menjadi parent dari beberapa widget yang disusun secara vertikal.
 
 Dengan struktur ini, tampilan aplikasi dapat dibangun secara bertingkat dan setiap widget memiliki tanggung jawab masing-masing.
+
+2. Apa saja widget yang digunakan pada proyek ini dan apa fungsinya?
+
+Beberapa widget yang digunakan dalam aplikasi MyPortfolio Mobile ini adalah:
+
+- MaterialApp: Menjadi konfigurasi utama aplikasi berbasis Material Design.
+- Scaffold: Menyediakan struktur dasar halaman, seperti AppBar dan body.
+- AppBar: Menampilkan judul aplikasi pada bagian atas halaman.
+- SingleChildScrollView: Memungkinkan konten halaman dapat digulir apabila ukurannya melebihi layar.
+- Column: Menyusun widget secara vertikal.
+- Row: Menyusun kartu informasi secara horizontal.
+- Expanded: Memberikan ruang yang tersedia secara proporsional kepada kartu informasi.
+- Card: Menampilkan informasi dalam bentuk kartu.
+- Padding: Memberikan jarak di bagian dalam widget.
+- Text: Menampilkan teks, seperti identitas mahasiswa dan pesan selamat datang.
+- SizedBox: Memberikan jarak antarwidget.
+- GridView.count: Menyusun tombol-tombol dalam bentuk grid.
+- Material: Menyediakan permukaan dengan warna dan bentuk tertentu untuk tombol.
+- InkWell: Memberikan interaksi ketika pengguna menekan tombol.
+- Icon: Menampilkan ikon yang merepresentasikan setiap tombol.
+- SnackBar: Menampilkan pesan singkat setelah tombol ditekan.
+- ScaffoldMessenger: Mengatur dan menampilkan SnackBar pada Scaffold.
+
+Selain widget bawaan Flutter, terdapat tiga class yang dibuat untuk menyusun komponen aplikasi, yaitu "MyHomePage", "InfoCard", "ItemHomepage", dan "ItemCard".
 
 3. Apa fungsi dari "MaterialApp" dalam proyek Flutter?
 
