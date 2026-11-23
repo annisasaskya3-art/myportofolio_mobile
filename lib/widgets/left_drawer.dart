@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/experience_form.dart';
 import '../screens/menu.dart';
 import '../screens/project_form.dart';
 
@@ -7,58 +8,60 @@ class LeftDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
-            ),
+          DrawerHeader(
+            decoration: BoxDecoration(color: colorScheme.primary),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'My Portfolio',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: colorScheme.onPrimary,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
-                  'Manage your projects',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+                  'Manage your portfolio',
+                  style: TextStyle(color: colorScheme.onPrimary),
                 ),
               ],
             ),
           ),
-
-          // Menu Home
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => const MenuPage(),
-                ),
+                MaterialPageRoute(builder: (context) => const MenuPage()),
               );
             },
           ),
-
-          // Menu Add Project
           ListTile(
             leading: const Icon(Icons.add),
             title: const Text('Add Project'),
             onTap: () {
               Navigator.push(
                 context,
+                MaterialPageRoute(builder: (context) => const ProjectFormPage()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.work),
+            title: const Text('Add Experience'),
+            onTap: () {
+              Navigator.push(
+                context,
                 MaterialPageRoute(
-                  builder: (context) => const ProjectFormPage(),
+                  builder: (context) => const ExperienceFormPage(),
                 ),
               );
             },
