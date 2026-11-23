@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import '../screens/project_form.dart';
 
 class ProjectCard extends StatelessWidget {
