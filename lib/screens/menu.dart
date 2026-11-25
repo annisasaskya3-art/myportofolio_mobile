@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+
 import '../widgets/experience_card.dart';
 import '../widgets/left_drawer.dart';
 import '../widgets/project_card.dart';
@@ -18,12 +19,7 @@ class MenuPage extends StatelessWidget {
       ),
       drawer: const LeftDrawer(),
       body: const SingleChildScrollView(
-        child: Column(
-          children: [
-            ProjectCard(),
-            ExperienceCard(),
-          ],
-        ),
+        child: Column(children: [ProjectCard(), ExperienceCard()]),
       ),
     );
   }

@@ -1,25 +1,34 @@
 import 'package:material_ui/material_ui.dart';
-import 'screens/menu.dart';
+import 'package:myportofolio_mobile/screens/menu.dart';
+import 'package:myportofolio_mobile/services/api_client.dart';
+import 'package:myportofolio_mobile/services/auth_state.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(apiClient: ApiClient()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({required this.apiClient, super.key});
+
+  final ApiClient apiClient;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My Portfolio',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blue,
+    return MultiProvider(
+      providers: [
+        Provider.value(value: apiClient),
+        ChangeNotifierProvider(create: (_) => AuthState(apiClient)),
+      ],
+      child: MaterialApp(
+        title: 'My Portfolio',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+          useMaterial3: true,
         ),
-        useMaterial3: true,
+        home: const MenuPage(),
       ),
-      home: const MenuPage(),
     );
   }
 }

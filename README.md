@@ -225,3 +225,75 @@ https://chatgpt.com/share/6afb2bb5-c87c-83ec-854f-53c7f4218b61?ogimg=plain
 - Jawaban awal dari AI terkadang kurang lengkap atau kurang tepat dengan pertanyaan tugas (contohnya, bagian hot restart/full restart belum memberi contoh kasus konkret, dan ada kesalahan jumlah class pada jawaban widget). Saya memeriksa dan memperbaikinya sendiri.
 
 Seluruh hasil bantuan AI saya tinjau kembali dan sesuaikan dengan struktur serta kebutuhan proyek. Saya bertanggung jawab atas pemeriksaan, pemahaman, dan pengumpulan hasil akhir tugas ini.
+
+### Tugas 8
+
+1. Jelaskan perbedaan antara Navigator.push(), Navigator.pushReplacement(), dan Navigator.pop(). Metode apa yang digunakan untuk membuka formulir dari kartu aksi? Jelaskan juga bagaimana opsi Home di drawer membawa pengguna kembali ke halaman utama.
+
+Navigator.push() biasa digunakan untuk membuka halaman baru di atas halaman yang sedang ditampilkan. Dengan code Navigation.push(), halaman sebelumnya akan tetap tersimpan di navigation stack sehingga pengguna dapat kembali ke halaman sebelumnya menggunakan tombol Back.
+
+Navigator.pushReplacement() digunakan untuk membuka halaman baru sekaligus menggantikan halaman sebelumnya. Dengan demikian, pengguna tidak dapat kembali ke halaman yang telah digantikan menggunakan tombol Back.
+
+Sementara itu, Navigator.pop() digunakan untuk menutup halaman yang sedang aktif dan kembali ke halaman sebelumnya.
+
+Untuk membuka formulir dari kartu aksi, metode terbaik yang dapat digunakan adalah Navigator.push() karena formulir dibuka sebagai halaman baru tanpa menghilangkan halaman utama.
+
+Opsi Home pada Drawer berfungsi mengarahkan pengguna kembali ke halaman utama portofolio. Navigasi dilakukan dengan membuka halaman Home sehingga pengguna dapat kembali mengakses informasi dan menu utama aplikasi.
+
+2. Bagaimana susunan Scaffold, AppBar, dan Drawer membantu menjaga struktur halaman tetap konsisten? Berikan satu contoh penggunaan warna tema portofolio di lebih dari satu halaman.
+
+Scaffold berfungsi sebagai kerangka utama halaman dalam Flutter. Di dalamnya terdapat beberapa komponen seperti AppBar sebagai bagian atas halaman dan Drawer sebagai menu navigasi samping.
+
+Susunan tersebut membantu menjaga konsistensi tampilan karena setiap halaman dapat menggunakan struktur navigasi yang serupa. Pengguna juga lebih mudah memahami tata letak dan berpindah antarhalaman.
+
+Contoh penggunaan warna tema portofolio adalah penggunaan warna biru pada widget tertentu, seperti AppBar dan tombol atau kartu aksi. Penggunaan warna yang konsisten pada beberapa halaman membuat tampilan aplikasi terlihat lebih seragam dan memiliki identitas visual.
+
+3. Mengapa tata letak tersebut dipilih untuk formulir? Jelaskan peran widget pengatur jarak dan widget penggulir ketika ruang layar terbatas.
+
+Tata letak formulir dipilih agar setiap komponen input tersusun secara vertikal dan mudah dibaca oleh pengguna. Susunan ini juga memudahkan pengguna mengisi formulir secara berurutan dari bagian atas hingga bawah.
+
+Widget SizedBox digunakan untuk memberikan jarak antar-widget agar elemen formulir tidak terlihat terlalu berdekatan.
+
+Sementara itu, widget SingleChildScrollView digunakan agar halaman dapat digulir ketika seluruh komponen formulir tidak muat dalam satu layar. Dengan demikian, pengguna tetap dapat mengakses seluruh bagian formulir meskipun menggunakan perangkat dengan ukuran layar yang terbatas.
+
+4. Apa peran GlobalKey<FormState>, validator, dan validate() saat tombol Simpan ditekan? Berikan satu contoh nilai yang ditolak oleh validasi dan jelaskan mengapa memilih jenis input atau papan ketik saja belum cukup.
+
+GlobalKey<FormState> digunakan untuk mengidentifikasi dan mengelola kondisi formulir sehingga validasi dapat dilakukan terhadap seluruh input yang berada di dalam widget Form.
+
+validator merupakan fungsi yang digunakan untuk memeriksa apakah nilai yang dimasukkan pengguna sudah memenuhi ketentuan. Jika input tidak valid, fungsi tersebut akan mengembalikan pesan kesalahan.
+
+Sementara itu, validate() digunakan ketika tombol Simpan ditekan untuk menjalankan seluruh fungsi validator pada formulir. Jika seluruh input valid, data dapat diproses lebih lanjut. Sebaliknya, jika terdapat input yang tidak valid, proses penyimpanan tidak dilanjutkan dan pesan kesalahan akan ditampilkan.
+
+Contohnya, apabila suatu kolom wajib diisi, nilai kosong atau hanya berisi spasi akan ditolak karena tidak memenuhi ketentuan pengisian.
+
+Pemilihan jenis input atau papan ketik saja belum cukup untuk menjamin validitas data. Misalnya, penggunaan papan ketik numerik memang memudahkan pengguna memasukkan angka, tetapi tidak menjamin bahwa nilai yang dimasukkan sudah sesuai dengan ketentuan aplikasi. Oleh karena itu, validator tetap diperlukan untuk memeriksa data sebelum disimpan.
+
+### AI Disclosure
+
+#### Tools yang dipakai
+
+- **Claude (Anthropic)**: membantu mentracking progres dan memahami deskripsi tugas seperti apa saja yang perlu dilakukan dan dilanjutkan dari Tutorial 9 sebelumnya untuk memenuhi tugas 8, membantu merancang form Pengalaman, dan kerangka kode validasi.
+
+#### Bagian yang dibantu AI
+
+1. Membaca struktur proyek dan menemukan hal yang perlu dibereskan: file `lib/menu.dart` lama yang tidak terpakai, `widget_test.dart` yang masih menguji halaman lama, dan `project_form.dart` yang belum memakai drawer.
+2. Membuat kerangka `ExperienceFormPage` (`lib/screens/experience_form.dart`), termasuk validator, date picker, dan `AlertDialog` ringkasan.
+3. Menyusun widget test baru untuk kartu aksi, validasi form kosong, dan opsi drawer.
+
+#### Strategi prompting
+
+Saya melampirkan zip proyek dan deskripsi tugas dari web PBP, lalu meminta AI memeriksa kode saya terhadap checklist sebelum membuat kode baru. Contoh prompt: "Hai Claude, bantu aku cek code proyekku dong, tolong diperiksa bagian apa saja yang perlu disesuaikan agar sesuai dengan target tugas 8". Saya juga mengirim output terminal ke AI saat ada hasil yang tidak saya mengerti.
+
+#### Log / bukti penggunaan AI
+
+(https://claude.ai/share/0780732d-a7be-42d4-a2b0-db94550faf5e)
+
+#### Keterbatasan AI dan perbaikan manual
+
+- AI tidak bisa menjalankan Flutter, jadi kode awalnya belum teruji. Saya sendiri yang menjalankan `flutter pub get`, `flutter analyze`, `flutter test`, dan `flutter run -d chrome`.
+- Kode dari AI memakai `import 'package:flutter/material.dart'`. Ternyata di versi Flutter saya import itu sudah deprecated, dan `flutter analyze` menemukan 7 isu. Saya memperbaikinya dengan menambah paket `material_ui` dan mengganti import di semua file, sampai analyzer memberikan output `No issues found!`.
+- AI tidak bisa melihat tampilan aplikasi, jadi saya sendiri yang menguji alur: form dari kartu dan drawer, input kosong dan valid, tanggal selesai yang lebih awal dari tanggal mulai, dan tombol Home dari halaman form.
+- AI tidak mengelola Git saya. Saya sendiri yang membuat commit bertahap dengan pesan yang jelas dan melakukan push.
+- [tambahkan perbaikan manual lain yang benar-benar kamu lakukan, misalnya mengganti teks, label field, atau tampilan]
+
+Seluruh hasil bantuan AI saya tinjau, uji, dan sesuaikan dengan struktur proyek. Saya bertanggung jawab atas pemahaman dan pengumpulan hasil akhir tugas ini.

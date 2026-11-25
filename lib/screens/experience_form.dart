@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+
 import '../widgets/left_drawer.dart';
 
 /// Halaman formulir untuk menambah pengalaman (magang, organisasi, dll).
@@ -108,10 +109,13 @@ class _ExperienceFormPageState extends State<ExperienceFormPage> {
     final text = value?.trim() ?? '';
     if (text.isEmpty) return null; // opsional
     final uri = Uri.tryParse(text);
-    final valid = uri != null &&
+    final valid =
+        uri != null &&
         (uri.scheme == 'http' || uri.scheme == 'https') &&
         uri.host.isNotEmpty;
-    return valid ? null : 'Format tautan tidak valid (contoh: https://contoh.com)';
+    return valid
+        ? null
+        : 'Format tautan tidak valid (contoh: https://contoh.com)';
   }
 
   // ---------- Simpan ----------
